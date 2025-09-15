@@ -1,7 +1,10 @@
 #!/bin/zsh
 
 set -e  # stop on error
+source ./setup/git_setup.sh
+
 echo "🚀 Bootstrapping your machine as a Software Engineer..."
+echo
 
 # --- Install Homebrew ---
 install_homebrew() {
@@ -22,11 +25,17 @@ install_homebrew() {
     clear
     echo "✅ Homebrew already installed"
   fi
+
+  echo "❗️ Homebrew has been successfully installed."
+  echo
 }
 
 # --- Install Brewfile ---
-# echo "📦 Installing apps and tools from Brewfile..."
-# brew bundle --file=./Brewfile
+install_homebrew_resources() {
+  echo "📦 Installing apps and tools from Brewfile..."
+  brew bundle --file=./Brewfile
+  echo "❗️ Homebrew has successfully installed all packages."
+}
 
 # --- Run setup scripts ---
 # for script in setup/*.sh; do
@@ -35,5 +44,8 @@ install_homebrew() {
 # done
 
 install_homebrew
+install_git
+configure_git
+# install_homebrew_resources
 
-echo "🎉 Done! Restart terminal to apply settings."
+echo "💯 Done! Restart terminal to apply settings."

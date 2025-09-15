@@ -2,8 +2,19 @@
 
 set -e  # stop on error
 
+install_git() {
+  if ! command -v git &>/dev/null; then
+    echo "📦 Installing Git with Homebrew..."
+    brew install git
+  else
+    echo "✅ Git is already installed."
+  fi
+  echo "❗️ Git has been installed"
+  echo
+}
+
 configure_git() {
-  echo "⚙️ Configuring Git..."
+  echo "⚙️  Configuring Git..."
 
   # Check if a global user.name is already set
   if [ -z "$(git config --global user.name)" ]; then
@@ -28,4 +39,5 @@ configure_git() {
 
   # Verify the settings
   echo "❗️ Git has been successfully setup."
+  echo
 }
