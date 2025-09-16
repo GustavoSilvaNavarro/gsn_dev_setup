@@ -37,12 +37,6 @@ install_homebrew_resources() {
   echo "❗️ Homebrew has successfully installed all packages."
 }
 
-# --- Run setup scripts ---
-# for script in setup/*.sh; do
-#   echo "⚙️ Running $script..."
-#   source "$script"
-# done
-
 install_homebrew
 install_git
 configure_git
