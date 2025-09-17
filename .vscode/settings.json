@@ -13,7 +13,9 @@
     "Powerlevel",
     "pyenv",
     "qodo",
+    "rustc",
     "talosctl",
-    "thefuck"
+    "thefuck",
+    "tlsv"
   ]
 }
