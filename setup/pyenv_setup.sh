@@ -41,13 +41,13 @@ install_and_setup_python_version() {
   pyenv install "$py_v_11"
   pyenv install "$py_v_12"
   pyenv install "$py_v_13"
-
   echo "Versions of python installed => "$py_v_11" | "$py_v_12" | "$py_v_13""
-  pyenv global "$py_v_11"
-
   echo
+
+  pyenv global "$py_v_11"
   echo "Global python version setup => "$py_v_11""
 
+  echo
   echo "--- Installed Python versions ---"
   pyenv versions
   echo "-----------------------------------"
