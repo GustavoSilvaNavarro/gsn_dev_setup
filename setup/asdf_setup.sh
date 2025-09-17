@@ -19,7 +19,7 @@ install_asdf() {
     fi
   fi
 
-  echo "❗️ ASDF has been installed."
+  echo "❗️ ASDF setup completed."
   echo
 }
 
