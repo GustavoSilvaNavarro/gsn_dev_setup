@@ -1,23 +1,34 @@
 {
   "cSpell.words": [
+    "chsh",
     "comprun",
+    "configmap",
     "Dbeaver",
+    "devspace",
     "devtoys",
     "ghostty",
     "gitmoji",
     "iterm",
     "jless",
+    "jumpcloud",
+    "jumpclouds",
     "krew",
     "kubecolor",
     "kubectx",
+    "kubens",
     "libexec",
     "Ollama",
     "Powerlevel",
     "pyenv",
     "qodo",
     "rustc",
+    "rustup",
+    "spacectl",
+    "spacelift",
     "talosctl",
     "thefuck",
-    "tlsv"
+    "thejumpcloud",
+    "tlsv",
+    "webui"
   ]
 }
