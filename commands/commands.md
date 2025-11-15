@@ -301,3 +301,35 @@
   ```sh
   brew update && brew upgrade && brew cleanup
   ```
+
+### Github CLI
+
+- Create a new PR (you need to be in the local repo)
+
+  ```sh
+  gh pr create
+  ```
+
+- Merge PR, and close the branch (it might need approvals and be in the local repo)
+
+  ```sh
+  gh pr merge <PR_NUMBER> --merge --delete-branch
+  ```
+
+- Merge PR, and close the branch (it might need approvals, not in local repo)
+
+  ```sh
+  gh pr merge <PR_NUMBER> --repo <owner/repo-name> --merge --delete-branch
+  ```
+
+- List all PRs when you are in local repo
+
+  ```sh
+  gh pr list --state all
+  ```
+
+- List all PRs authored by someone when you are in local repo
+
+  ```sh
+  gh pr list --state all --author "<NAME>"
+  ```
