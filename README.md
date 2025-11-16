@@ -2,9 +2,13 @@
 
 ### Manual installation AppStore
 
-- Install Xcode (check you got xcode-select) using the following command `xcode-select --version`
-- Install Slack
-- Install Whatsapp
+- Install [Xcode](https://apps.apple.com/us/app/xcode/id497799835?mt=12) (check you got xcode-select) using the following command `xcode-select --version`
+- Install [Slack](https://apps.apple.com/us/app/slack-for-desktop/id803453959?mt=12)
+- Install [Whatsapp](https://apps.apple.com/us/app/whatsapp-messenger/id310633997)
+- Install [Dropover - Easier Drag & Drop](https://apps.apple.com/us/app/dropover-easier-drag-drop/id1355679052?mt=12)
+- Install [Hidden Bar](https://apps.apple.com/us/app/hidden-bar/id1452453066?mt=12)
+#### Optionals
+- Install [Unzip - RAR](https://apps.apple.com/us/app/unzip-rar-zip-7z-unarchiver/id1537056818?mt=12)
 
 ### Manual Installation (Download from websites) [^3](#note3)
 

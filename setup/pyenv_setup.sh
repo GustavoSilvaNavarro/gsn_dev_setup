@@ -34,9 +34,9 @@ install_and_setup_python_version() {
   fi
 
   echo "✅ PYENV is installed, lets installed python versions"
-  local py_v_11="3.11.13"
-  local py_v_12="3.12.11"
-  local py_v_13="3.13.7"
+  local py_v_11="3.12.12"
+  local py_v_12="3.13.9"
+  local py_v_13="3.14.0"
 
   pyenv install "$py_v_11"
   pyenv install "$py_v_12"
