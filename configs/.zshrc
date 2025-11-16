@@ -158,8 +158,9 @@ if [ -f '/Users/gustavosilva/google-cloud-sdk/completion.zsh.inc' ]; then . '/Us
 # Added by Windsurf
 export PATH="/Users/gustavosilva/.codeium/windsurf/bin:$PATH"
 
-# ------ Aliases -----
-alias list="eza --color=always --long --icons=always --no-user"
+# ----- Docker ENVs ------
+export DOCKER_BUILDKIT=1
+export COMPOSE_DOCKER_CLI_BUILD=1
 
 # ----- THE FUCK -----
 eval $(thefuck --alias)
@@ -176,5 +177,30 @@ eval "$(pyenv init -)"
 eval "$(rbenv init -)"
 
 # ---- ASDF -----
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
-export PATH="$PATH:/Users/gustavosilva/.asdf/installs/golang/1.25.0/bin" # need this for go binaries
+export ASDF_DIR="$(brew --prefix asdf)/libexec"
+export ASDF_DATA_DIR="$HOME/.asdf"
+
+. "$ASDF_DIR/asdf.sh"
+
+# ---- Ensure Go binaries (from asdf) are on your PATH dynamically -----
+if command -v asdf >/dev/null && asdf where golang >/dev/null 2>&1; then
+  GO_BIN_DIR="$(asdf where golang)/bin" # command picks the global golang version that is being used
+  export PATH="$PATH:$GO_BIN_DIR" # adds it to the path
+else
+  echo "⚠️  Go version not set in PATH via asdf. Run 'asdf install golang <version>' and 'asdf set -u golang <version>'.\
+  If you have done so and it is not working run the following command: asdf reshim golang <version>
+  "
+fi
+
+# ? This also works but the command above is better
+# if [ -d "$ASDF_DATA_DIR/installs/golang" ]; then
+#   # command chose the latest version of golang installed using asdf
+#   GO_BIN_DIR="$(find "$ASDF_DATA_DIR/installs/golang" -maxdepth 1 -type d -name '[0-9]*' | sort -V | tail -n 1)/bin"
+#   export PATH="$PATH:$GO_BIN_DIR" # need this for go binaries
+# fi
+
+# ------ Aliases -----
+alias list="eza --color=always --long --icons=always --no-user"
+
+# Git Aliases
+alias gall="git add ."
