@@ -302,6 +302,24 @@
   brew update && brew upgrade && brew cleanup
   ```
 
+- Download Homebrew packages in a file
+
+  ```sh
+  brew bundle dump
+  ```
+
+- Download packages using a `Brewfile`. Looks for Brewfile in the current directory and installs everything listed.
+
+  ```sh
+  brew bundle
+  ```
+
+- Download packages using a `Brewfile`. Use this if your Brewfile is located somewhere else.
+
+  ```sh
+  brew bundle --file=/path/to/my/backup/Brewfile
+  ```
+
 ### Github CLI
 
 - Create a new PR (you need to be in the local repo)
