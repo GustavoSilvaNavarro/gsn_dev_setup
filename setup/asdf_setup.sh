@@ -32,7 +32,7 @@ installing_go() {
     exit 1
   fi
 
-  local go_v="1.25.1"
+  local go_v="1.25.4"
   asdf plugin add golang
   echo "🐱 Golang plugin has been installed"
   echo
