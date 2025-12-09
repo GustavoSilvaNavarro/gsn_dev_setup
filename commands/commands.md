@@ -351,3 +351,10 @@
   ```sh
   gh pr list --state all --author "<NAME>"
   ```
+
+### Terraform
+
+- Validate syntax for terraform
+  ```sh
+  terraform validate
+  ```
