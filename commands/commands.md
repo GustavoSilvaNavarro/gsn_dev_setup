@@ -176,6 +176,21 @@
   aws-elevate <EMAIL> -p secrets-management -s <ROLE> -a <ACCOUNT_NUMBER> -d <TIME> -m "<REASON>"
   ```
 
+- AWS Code Artifact get repository endpoint
+
+  ```sh
+  # sample aws codeartifact get-repository-endpoint --domain jumpcloud-artifacts --domain-owner 642920845081 --region us-east-2 --repository jumpcloud-node-modules --format npm --query repositoryEndpoint --output text
+
+  aws codeartifact get-repository-endpoint \
+  --domain <AWS_DOMAIN> \
+  --domain-owner <AWS_DOMAIN_OWNER> \
+  --region <AWS_REGION> \
+  --repository <AWS_REPO> \
+  --format npm \
+  --query repositoryEndpoint \
+  --output text
+  ```
+
 ### Docker commands
 
 - Copy the node_modules folder for old versions of node
@@ -350,4 +365,32 @@
 
   ```sh
   gh pr list --state all --author "<NAME>"
+  ```
+
+### Terraform
+
+- Validate syntax for terraform
+  ```sh
+  terraform validate
+  ```
+
+### NPM
+
+- Add npm registry to .npmrc file
+
+  ```sh
+  # It could be Google or Amazon registry
+  # if its a scoped library add in front of registry the scope like @jumpcloud:registry
+  npm config set registry <CODEARTIFACT_REPO_ENDPOINT> --location project
+  ```
+
+- Add npm auth token to .npmrc file if need it
+
+  ```sh
+  # the code artifact or registry repo does not need https://
+  # TOKEN could be a env variable or add it straight I recommend as variable
+  npm config set <CODEARTIFACT_REPO_ENDPOINT>:_authToken='${TOKEN}' --location project
+
+  # if you need to remove the https:// since you CodeArtifact repo is a variable you can do
+  npm config set //$(echo $<REPO_VARIABLE> | sed -E 's|^https?://||'):_authToken='${TOKEN}' --location project
   ```
