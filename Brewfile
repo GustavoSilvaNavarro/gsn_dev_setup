@@ -56,6 +56,9 @@ brew "watchman"
 brew "xh"
 brew "yq"
 brew "dagger/tap/dagger"
+brew "awscli"
+brew "temporal"
+brew "granted" # check the official web, this one up
 
 # Casks - Apps
 cask "alt-tab"
@@ -71,6 +74,9 @@ cask "postman"
 cask "rectangle"
 cask "redis-insight"
 cask "warp"
+cask "gcloud-cli"
+cask "dbeaver-community"
+cask "raycast"
 
 # VSCode extensions
 vscode "aaron-bond.better-comments"
